@@ -4,8 +4,11 @@ var _ = require('lodash');
 var logger = require('../lib/logger');
 var log = logger();
 
-var users = require('../init_data.json').data;
+var fs = require('fs');
+
+// var users = require('../init_data.json').data;
 var curId = _.size(users);
+var users = []
 
 /* GET users listing. */
 router.get('/', function(req, res) {
@@ -20,6 +23,9 @@ router.post('/', function(req, res) {
     user.state = 'pending';
   }
   users[user.id] = user;
+
+  fs.writeFile('public/ling.json', JSON.stringify(users));
+
   log.info('Created user', user);
   res.json(user);
 });
