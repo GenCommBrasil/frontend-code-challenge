@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset=utf-8>
-  <title>Admin Page</title>
+    <meta charset=utf-8>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script defer src="js/jquery.min.js"></script>
+    <script defer src="js/bootstrap.min.js"></script>
 </head>
+
 <body>
-  List user data here
+    <nav class="navbar navbar-default">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/signup.html">Registration Page</a></li>
+                <li class="active"><a href="/admin.html">Admin Page</a></li>
+            </ul>
+        </div>
+    </nav>
+    <h2 class="text-primary text-center">Registered Users</h2>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>ssales.daniel@gmail.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 </body>
+
 </html>
