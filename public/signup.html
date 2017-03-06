@@ -28,12 +28,12 @@
     <div class="flex-container">
         <div class="row">
             <div class="flex-item">
-                <form ng-submit="" ng-controller="signupCtrl">
-                    <input class="form-control" type="text" name="name" placeholder="Name" required>
+                <form ng-submit="register()" ng-controller="signupCtrl">
+                    <input class="form-control" ng-model="data.firstName" type="text" name="name" placeholder="Name" required>
                     </br>
-                    <input class="form-control" type="text" name="lastName" placeholder="Last Name" required>
+                    <input class="form-control" ng-model="data.lastName" type="text" name="lastName" placeholder="Last Name" required>
                     </br>
-                    <input class="form-control" type="text" name="email" placeholder="Email" required>
+                    <input class="form-control" ng-model="data.email" type="text" name="email" placeholder="Email" required>
                     </br>
                     <button class="btn btn-primary btn-block" type="submit">Submit</button>
                 </form>
