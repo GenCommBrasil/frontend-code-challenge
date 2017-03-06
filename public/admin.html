@@ -8,12 +8,16 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script defer src="js/jquery.min.js"></script>
+    <script defer src="js/angular.min.js"></script>
     <script defer src="js/bootstrap.min.js"></script>
+    <script defer src="js/module.js"></script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/main-service.js"></script>
 </head>
 
-<body>
+<body ng-app="regEmail">
     <nav class="navbar navbar-default">
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="container-fluid">
             <ul class="nav navbar-nav">
                 <li><a href="/signup.html">Registration Page</a></li>
                 <li class="active"><a href="/admin.html">Admin Page</a></li>
@@ -21,7 +25,7 @@
         </div>
     </nav>
     <h2 class="text-primary text-center">Registered Users</h2>
-    <div class="container">
+    <div class="container" ng-controller="regCtrl">
         <div class="table-responsive">
             <table class="table">
                 <thead>
@@ -30,10 +34,10 @@
                         <th>Email</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody ng-repeat="user in users">
                     <tr>
-                        <td>1</td>
-                        <td>ssales.daniel@gmail.com</td>
+                        <td>{{user.id}}</td>
+                        <td>{{user.email}}</td>
                     </tr>
                 </tbody>
             </table>
