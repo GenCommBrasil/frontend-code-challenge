@@ -11,11 +11,11 @@
     <script defer src="js/angular.min.js"></script>
     <script defer src="js/bootstrap.min.js"></script>
     <script defer src="js/module.js"></script>
-    <script defer src="js/main.js"></script>
+    <script defer src="js/signup-controller.js"></script>
     <script defer src="js/main-service.js"></script>
 </head>
 
-<body>
+<body ng-app="regEmail">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
@@ -28,10 +28,14 @@
     <div class="flex-container">
         <div class="row">
             <div class="flex-item">
-                <form>
-                    <input class="form-control input-lg" type="email" name="email" placeholder="Email">
+                <form ng-submit="" ng-controller="signupCtrl">
+                    <input class="form-control" type="text" name="name" placeholder="Name" required>
                     </br>
-                    <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+                    <input class="form-control" type="text" name="lastName" placeholder="Last Name" required>
+                    </br>
+                    <input class="form-control" type="text" name="email" placeholder="Email" required>
+                    </br>
+                    <button class="btn btn-primary btn-block" type="submit">Submit</button>
                 </form>
                 <br>
                 <br>
