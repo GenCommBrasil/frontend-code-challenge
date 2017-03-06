@@ -9,7 +9,16 @@ angular.module('meusServicos', [])
                     return data;
                 });
         }
+
+        var postData = function(data) {
+            return $http.post('http://localhost:3000/users', data)
+            .then(function(data) {
+                console.log(data);
+            })
+        }
+
         return {
-            getData: getData
+            getData: getData,
+            postData: postData
         };
     });
