@@ -11,8 +11,8 @@
     <script defer src="js/angular.min.js"></script>
     <script defer src="js/bootstrap.min.js"></script>
     <script defer src="js/module.js"></script>
-    <script defer src="js/main.js"></script>
-    <script defer src="js/main-service.js"></script>
+    <script defer src="js/controllers/admin-controller.js"></script>
+    <script defer src="js/services/main-service.js"></script>
 </head>
 
 <body ng-app="regEmail">
@@ -26,7 +26,7 @@
     </nav>
     <h2 class="text-primary text-center">Registered Users</h2>
     <input type="text" class="form-control search" ng-model="search" placeholder="Filtro">
-    <div class="container" ng-controller="regCtrl">
+    <div class="container" ng-controller="adminCtrl">
         <div class="table-responsive">
             <table class="table">
                 <thead>
