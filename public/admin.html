@@ -1,10 +1,56 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset=utf-8>
-  <title>Admin Page</title>
+    <meta charset=utf-8>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script defer src="js/jquery.min.js"></script>
+    <script defer src="js/angular.min.js"></script>
+    <script defer src="js/bootstrap.min.js"></script>
+    <script defer src="js/module.js"></script>
+    <script defer src="js/controllers/admin-controller.js"></script>
+    <script defer src="js/services/main-service.js"></script>
 </head>
-<body>
-  List user data here
+
+<body ng-app="regEmail">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a href="/signup.html">Registration Page</a></li>
+                <li class="active"><a href="/admin.html">Admin Page</a></li>
+            </ul>
+        </div>
+    </nav>
+    <h2 class="text-primary text-center">Registered Users</h2>
+    <input type="text" class="form-control search" ng-model="search" placeholder="Filtro">
+    <div class="container" ng-controller="adminCtrl">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Email</th>
+                        <th>Name</th>
+                        <th>Last Name</th>
+                        <th>State</th>
+                    </tr>
+                </thead>
+                <tbody ng-repeat="user in users | filter:search">
+                    <tr>
+                        <td>{{user.id}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.firstName}}</td>
+                        <td>{{user.lastName}}</td>
+                        <td>{{user.state}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 </body>
+
 </html>

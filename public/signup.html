@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset=utf-8>
-  <title>Registration Portal</title>
+    <meta charset=utf-8>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Portal</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script defer src="js/jquery.min.js"></script>
+    <script defer src="js/angular.min.js"></script>
+    <script defer src="js/bootstrap.min.js"></script>
+    <script defer src="js/module.js"></script>
+    <script defer src="js/controllers/signup-controller.js"></script>
+    <script defer src="js/services/main-service.js"></script>
 </head>
-<body>
-  <h1>Registration Portal</h1>
-  <form>
-    Email: <input type="email" name="email"></br>
-    <button type="submit">Submit</button>
-  </form>
-  <p>
-    <a href="/admin.html">Admin Page</a>
-  </p>
+
+<body ng-app="regEmail">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/signup.html">Registration Page</a></li>
+                <li><a href="/admin.html">Admin Page</a></li>
+            </ul>
+        </div>
+    </nav>
+    <h2 class="text-primary text-center">Registration Portal</h2>
+    <div class="flex-container">
+        <div class="row">
+            <div class="flex-item">
+                <form ng-submit="register()" ng-controller="signupCtrl">
+                    <input class="form-control" ng-model="data.firstName" type="text" name="name" placeholder="Name" required>
+                    </br>
+                    <input class="form-control" ng-model="data.lastName" type="text" name="lastName" placeholder="Last Name" required>
+                    </br>
+                    <input class="form-control" ng-model="data.email" type="text" name="email" placeholder="Email" required>
+                    </br>
+                    <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                </form>
+                <br>
+                <br>
+                <p class="text-center">
+                    <a href="/admin.html">Admin Page</a>
+                </p>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
